@@ -15,7 +15,7 @@ Following are the goals and to-dos:
 
 <li>Publish the application</li>
 
-<li>Redefine the space between _nakṣatra_-s and moon so that it more accurate than it is right now</li>
+<li>Redefine the space between <em>nakṣatra</em>-s and moon so that it more accurate than it is right now</li>
 
 <li>Incorporate better calculations for accurate results</li>
 

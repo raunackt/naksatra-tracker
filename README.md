@@ -7,7 +7,7 @@ Currently, the orientation of _nakṣatra_-s is the same as it would be when you
 
 **7th December, 2023:**
 
-The application is highly inaccurate and only shows the moon's passage through a _nakṣatra_ every hour, without considering the actual position of the moon in sky and in the relative area of _nakṣatra_. The _nakṣatra_-s have also been evenly placed, each _nakṣatra_-image being 256x256 pixels, hence this is also highly inaccurate.
+The application is highly inaccurate and only shows the moon's passage through a _nakṣatra_ every hour, without considering the actual position of the moon in sky and in the relative area of _nakṣatra_. The _nakṣatra_-s have also been evenly placed, each _nakṣatra_-image being 256x256 pixels, hence depicting a very wrong distance and are not to scale.
 
 The update is hourly since updating every second is currently pointless in a 2D-plane and also the value is too small for tracking and maintenance.
 

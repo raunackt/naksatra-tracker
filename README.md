@@ -12,8 +12,13 @@ The application is highly inaccurate and only shows the moon's passage through a
 The update is hourly since updating every second is currently pointless in a 2D-plane and also the value is too small for tracking and maintenance.
 
 Following are the goals and to-dos:
+
 • Publish the application
+
 • Redefine the space between _nakṣatra_-s and moon so that it more accurate than it is right now
+
 • Incorporate better calculations for accurate results
+
 • Add proper labels and other relevant information for better navigation and readability
+
 • Make the application 3D. Basically a Stellarium app with _only_ relevant Hindu stars

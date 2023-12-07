@@ -1,3 +1,6 @@
+Nakshtra Tracker
+---
+
 This application is meant to show moon's position within a _nakṣatra_, an asterism, as defined in Hindu astrology.
 
 Currently, the orientation of _nakṣatra_-s is the same as it would be when you were facing in the northern direction at the time of sunrise, typically 0655-0700.

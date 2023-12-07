@@ -1,4 +1,4 @@
-Nakshatra Tracker.
+Nakshatra Tracker
 ---
 
 This application is meant to show moon's position within a _nakṣatra_, an asterism, as defined in Hindu astrology.

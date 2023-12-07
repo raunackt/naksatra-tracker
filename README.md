@@ -13,12 +13,12 @@ The update is hourly since updating every second is currently pointless in a 2D-
 
 Following are the goals and to-dos:
 
-• Publish the application
+<li>Publish the application</li>
 
-• Redefine the space between _nakṣatra_-s and moon so that it more accurate than it is right now
+<li>Redefine the space between _nakṣatra_-s and moon so that it more accurate than it is right now</li>
 
-• Incorporate better calculations for accurate results
+<li>Incorporate better calculations for accurate results</li>
 
-• Add proper labels and other relevant information for better navigation and readability
+<li>Add proper labels and other relevant information for better navigation and readability</li>
 
-• Make the application 3D. Basically a Stellarium app with _only_ relevant Hindu stars
+<li>Make the application 3D. Basically a Stellarium app with _only_ relevant Hindu stars</li>

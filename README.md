@@ -5,6 +5,10 @@ This application is meant to show moon's position within a _nakṣatra_, an aste
 
 Currently, the orientation of _nakṣatra_-s is the same as it would be when you were facing in the northern direction at the time of sunrise, typically 0655-0700.
 
+**Pausha Shuklapaksha Navami, 2024**
+---
+Fixed issues with times and day changes. Version 1 of the application is ready. Will be live soon.
+
 
 **Pausha Shuklapaksha Shashthi, 2024**
 ---

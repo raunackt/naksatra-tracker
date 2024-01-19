@@ -5,34 +5,61 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-#moon{
-    width: 512px;
-    height: 512px;
-    border-radius: 256px;
-    background-color: white;
-    z-index: 5;
+#loading{
+    width: 100%;
+    height: 100%;
+    font-size: 3em;
+    background: black;
+    border: white 1px;
+    color: white;
+    text-align: center;
     position: fixed;
-    top: 15%;
-    right: -15%;
-    opacity: 1;
+    padding: 20% 0;
+    top: 0%;
+    z-index: 10;
+    transition: 0.5s ease;
 }
+
 
 .bg{
-    transform: translate(35%,-30%);
-}
-
-#bg{
-    transform: rotateZ(-0deg);
+    transform: translate(60%,-25%);
 }
 
 
 #naksatra-nama{
-    position: fixed;
-    left: 2%;
-    top: 5%;
+    position: absolute;
+    left: 4%;
+    top: 5%; 
     /* color: white; */
     background-color: white;
     border-radius: 5px;
-    padding: 10px;
+    padding: 0.25em;
+    font-size: 2.5em;
+    font-weight: bold;
+    width: 3em;
+    text-align: center;
+} 
+
+
+#moon{
+    width: 128px;
+    height: 128px;
+    border-radius: 64px;
+    background-color: white;
+    z-index: 5;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    opacity: 1;
+}
+
+
+#range-band{
+    width: 100%;
+    height: 128px;
+    background: linear-gradient(to left, white,white, transparent,transparent,transparent);
+    z-index: 4;
+    position: absolute;
+    top: 40%;
+    opacity: 0.25;
 }

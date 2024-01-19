@@ -14,8 +14,11 @@ let loading = document.getElementById("loading");
 const DAY = 1000 * 60 * 60 * 24;
 
 function setNakshtra() {
-  // calculate how many day's have passed since 1th january, 2024 = ephemeris start date
-  let currentDate = new Date();
+  // calculate how many days have passed since 1st january, 2024 = ephemeris start date
+  let currentDate = convertGMTToIST(getGMTDate(new Date()));
+
+  console.log("Current IST Date: ", currentDate)
+
   let longToday = Math.floor((currentDate - new Date("2024-01-01")) / DAY);
   //get current time, calculate difference between NOW and sunrise and set delta accordingly
   let currentTime = new Date().getTime();
@@ -136,3 +139,28 @@ function setNakshtraName(rotateVal) {
 
 // call change function every 5 seconds
 setInterval(change, 1000 * 5);
+
+// converting date from any location to GMT
+function getGMTDate(date) {
+  // get the location offset from GMT in minutes
+  let currentTimezoneOffset = date.getTimezoneOffset();
+
+  // add/remove offset from the date's milliseconds
+  let gmt = date.getTime() + (currentTimezoneOffset * 60 * 1000);
+
+  // return new date based on GMT milliseconds
+  return new Date(gmt);
+}
+
+
+// convert GMT Date to IST Date
+function convertGMTToIST(gmtDate) {
+  // ISTOffset with respect to GMT is -330 minutes
+  // Since we have GMT Date, we need to add 330 minutes to convert GMT to IST
+  const ISTOffset = 330;
+
+  let istMillis = gmtDate.getTime() + (ISTOffset * 60 * 1000);
+
+  // return new date based on IST milliseconds
+  return new Date(istMillis);
+}

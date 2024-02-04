@@ -4,7 +4,10 @@ const longitudes = [
   41.39, 53.53, 65.66, 77.79, 89.92, 102.05, 114.19, 126.32, 138.46, 150.61,
   162.76, 174.91, 187.07, 199.24, 211.41, 223.59, 235.78, 247.97, 260.16,
   272.36, 284.56, 296.75, 308.95, 321.13, 333.31, 345.49, 357.66, 9.82, 21.98,
-  34.13, 46.28, 58.43, 70.57, 82.71, 94.85, 107, 119.14, 131.29, 143.44,
+  34.13, 46.28, 58.43, 70.57, 82.71, 94.85, 107, 119.14, 131.29, 143.44, 155.6,
+  167.76, 179.93, 192.11, 204.29, 228.68, 265.29, 277.5, 289.71, 301.92, 314.12,
+  326.32, 338.51, 350.7, 2.88, 15.06, 27.23, 39.4, 51.56, 63.72, 75.88, 88.04,
+  100.2, 112.36, 124.52, 136.69, 148.86, 161.03,
 ];
 
 let bgImg = document.getElementById("bg");
@@ -14,11 +17,14 @@ let loading = document.getElementById("loading");
 const DAY = 1000 * 60 * 60 * 24;
 
 function setNakshtra() {
-  // calculate how many day's have passed since 1th january, 2024 = ephemeris start date
-  let currentDate = new Date();
+  // calculate how many days have passed since 1st january, 2024 = ephemeris start date
+  let currentDate = convertGMTToIST(getGMTDate(new Date()));
+
+  console.log("Current IST Date: ", currentDate);
+
   let longToday = Math.floor((currentDate - new Date("2024-01-01")) / DAY);
   //get current time, calculate difference between NOW and sunrise and set delta accordingly
-  let currentTime = new Date().getTime();
+  let currentTime = currentDate.getTime();
   let sunRiseForToday = new Date(
     currentDate.getFullYear(),
     currentDate.getMonth(),
@@ -57,7 +63,6 @@ const change = () => {
   setNakshtraName(rotateZ);
   bgImg.style.transform = `rotateZ(${rotateZ}deg)`;
 };
-
 
 class Naksatra {
   upperBound;
@@ -102,7 +107,7 @@ let naksatraMap = new Map();
 naksatraMap.set(Revati, "रेवती");
 naksatraMap.set(Uttarabhadrapada, "उत्तरभद्रपदा");
 naksatraMap.set(Purvabhadrapada, "पूर्वभद्रपदा");
-naksatraMap.set(Shatabhisha, "Shatabhisha");
+naksatraMap.set(Shatabhisha, "शतभिषा");
 naksatraMap.set(Dhanishtha, "धनिष्ठा");
 naksatraMap.set(Shravana, "श्रवण");
 naksatraMap.set(Uttarashadha, "उत्तराषाढा");
@@ -136,3 +141,27 @@ function setNakshtraName(rotateVal) {
 
 // call change function every 5 seconds
 setInterval(change, 1000 * 5);
+
+// converting date from any location to GMT
+function getGMTDate(date) {
+  // get the location offset from GMT in minutes
+  let currentTimezoneOffset = date.getTimezoneOffset();
+
+  // add/remove offset from the date's milliseconds
+  let gmt = date.getTime() + currentTimezoneOffset * 60 * 1000;
+
+  // return new date based on GMT milliseconds
+  return new Date(gmt);
+}
+
+// convert GMT Date to IST Date
+function convertGMTToIST(gmtDate) {
+  // ISTOffset with respect to GMT is -330 minutes
+  // Since we have GMT Date, we need to add 330 minutes to convert GMT to IST
+  const ISTOffset = 330;
+
+  let istMillis = gmtDate.getTime() + ISTOffset * 60 * 1000;
+
+  // return new date based on IST milliseconds
+  return new Date(istMillis);
+}

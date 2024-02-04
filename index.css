@@ -1,11 +1,11 @@
-body{
+body {
     background-color: black;
     width: 100%;
     overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#loading{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  #loading {
     width: 100%;
     height: 100%;
     font-size: 3em;
@@ -18,30 +18,33 @@ body{
     top: 0%;
     z-index: 10;
     transition: 0.5s ease;
-}
-
-
-.bg{
-    transform: translate(60%,-25%);
-}
-
-
-#naksatra-nama{
+  }
+  
+  .bg {
+    transform: translate(30%, -25%);
+  }
+  
+  #naksatra-nama {
     position: absolute;
-    left: 4%;
-    top: 5%; 
-    /* color: white; */
+    right: 20%;
+    top: 43%;
     background-color: white;
     border-radius: 5px;
-    padding: 0.25em;
+    padding: 0.25em 0;
     font-size: 2.5em;
     font-weight: bold;
-    width: 3em;
+    width: 5.25em;
     text-align: center;
-} 
-
-
-#moon{
+  }
+  
+  #nakstra-map {
+    position: absolute;
+    right: 17%;
+    top: 25%;
+    z-index: 9;
+  }
+  
+  #moon {
     width: 128px;
     height: 128px;
     border-radius: 64px;
@@ -49,17 +52,118 @@ body{
     z-index: 5;
     position: absolute;
     top: 40%;
-    right: 10%;
+    right: 45%;
     opacity: 1;
-}
-
-
-#range-band{
+  }
+  
+  #range-band {
     width: 100%;
     height: 128px;
-    background: linear-gradient(to left, white,white, transparent,transparent,transparent);
+    background: linear-gradient(
+      to left,
+      white,
+      white,
+      transparent,
+      transparent,
+      transparent
+    );
     z-index: 4;
     position: absolute;
     top: 40%;
+    right: 50%;
     opacity: 0.25;
-}
+  }
+  
+  @media screen and (max-height: 720px) and (max-width: 1280px) {
+    .bg {
+      transform: translate(25%, -19.5%);
+    }
+  }
+  
+  @media screen and (max-height: 900px) and (max-width: 400px) {
+  
+      html, body{
+          overflow: hidden;
+          margin: 0;
+      }
+  
+    .bg {
+      transform: translate(3%, -27%);
+      width: 2048px;
+      height: 2048px;
+      /* transform: scale(.75, .75); */
+    }
+  
+    #moon {
+      display: none;
+    }
+  
+    #naksatra-nama {
+      position: fixed;
+      width: 4em;
+      top: 1%;
+      left: 2%;
+      height: 2em;
+      padding: 0.5em 0 0;
+      margin: 0;
+      opacity: 0.5;
+      font-size: 1.25em;
+    }
+  
+    #range-band {
+      position: absolute;
+      top: 37.5%;
+      right: 0%;
+      height: 192px;
+      background: linear-gradient(
+          to left,
+          white,
+          white,
+          transparent
+        );
+    }
+  }
+  
+  
+  @media (max-width:800px) and (max-height: 1080px){
+      html, body{
+          overflow: hidden;
+          margin: 0;
+      }
+  
+    .bg {
+      transform: translate(3%, -27%);
+      width: 2048px;
+      height: 2048px;
+      /* transform: scale(.75, .75); */
+    }
+  
+    #moon {
+      display: none;
+    }
+  
+    #naksatra-nama {
+      position: fixed;
+      width: 4em;
+      top: 1%;
+      left: 2%;
+      height: 2em;
+      padding: 0.5em 0 0;
+      margin: 0;
+      opacity: 0.5;
+      font-size: 1.25em;
+    }
+  
+    #range-band {
+      position: absolute;
+      top: 37.5%;
+      right: 0%;
+      height: 192px;
+      background: linear-gradient(
+          to left,
+          white,
+          white,
+          transparent
+        );
+    }
+  }

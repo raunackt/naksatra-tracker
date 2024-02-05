@@ -22,7 +22,8 @@ function setNakshtra() {
 
   console.log("Current IST Date: ", currentDate);
 
-  let longToday = Math.floor((currentDate - new Date("2024-01-01")) / DAY);
+  // 01st Jan 2024 06:55:00 IST = 1704072300000.
+  let longToday = Math.floor((Date().getTime() - 1704072300000) / DAY);
   //get current time, calculate difference between NOW and sunrise and set delta accordingly
   let currentTime = currentDate.getTime();
   let sunRiseForToday = new Date(
